@@ -9,9 +9,14 @@
         Title="MainWindow" Height="450" Width="800"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
-        ShowInTaskbar="True"
-        
+        ShowInTaskbar="True" 
         >
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0,0,0,1" CornerRadius="0" />
+    </WindowChrome.WindowChrome>
+
+
     <Window.Resources>
         <Style x:Key="MyButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="Background" Value="Transparent"/>
@@ -33,10 +38,7 @@
     </Window.Resources>
 
 
-    <Grid RenderTransformOrigin="0.5,0.5">
-        <Grid.Background>
-            <ImageBrush ImageSource="/website-background-patterns-clipart-3.jpg" TileMode="None"/>
-        </Grid.Background>
+    <Grid RenderTransformOrigin="0.5,0.5" Background="#FF1F3960">
         <Button x:Name="tlacitkoPrihlas" Content="Přihlásit" HorizontalAlignment="Center" Margin="0,326,0,0" VerticalAlignment="Top" Height="75" Width="244" Click="Button_Click" Background="{x:Null}" FontSize="36" Foreground="#FFBAC8FF" FontFamily="Roboto Lt" FontWeight="Bold" IsDefault="True" Style="{StaticResource MyButtonStyle}"
                 >
 
@@ -47,7 +49,7 @@
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF760A82" Offset="1"/>
+                    <GradientStop Color="#FF0A5982" Offset="1"/>
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
@@ -72,8 +74,8 @@
                 <DropShadowEffect/>
             </Label.Effect>
         </Label>
-        <Image x:Name="image" gif:ImageBehavior.AnimatedSource="C:\CSharp\WPFtest2\Resources\social-media-unscreen.gif" Height="112" Margin="339,0,339,0" VerticalAlignment="Top" Stretch="Fill"  Opacity="0.97" Source="/social-media.gif"  />
-        <Image HorizontalAlignment="Left" Height="57" Margin="265,139,0,0" VerticalAlignment="Top" Width="51" Source="/user.png">
+        <Image x:Name="image" gif:ImageBehavior.AnimatedSource="C:\CSharp\WPFtest2\Resources\social-media-unscreen.gif" Height="82" Margin="348,0,356,0" VerticalAlignment="Top" Stretch="Fill"  Opacity="0.97" Source="/social-media.gif"  />
+        <Image HorizontalAlignment="Left" Height="57" Margin="265,139,0,0" VerticalAlignment="Top" Width="51" Source="/user.png" Opacity="0.5">
             <Image.OpacityMask>
                 <ImageBrush Stretch="Fill" ImageSource="/user.png"/>
             </Image.OpacityMask>
@@ -92,7 +94,7 @@
 
 
         </Button>
-       
+
 
 
 

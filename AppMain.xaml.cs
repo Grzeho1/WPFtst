@@ -49,6 +49,7 @@ namespace WPFtest2
             Page2 page2 = new Page2();
             Main.Navigate(page2);
             obr_home.Source = new BitmapImage(new Uri(@"/Resources/home.png", UriKind.Relative));
+            
         }
 
         private void ListViewItem_Selected_2(object sender, RoutedEventArgs e)
@@ -60,5 +61,7 @@ namespace WPFtest2
         {
           
         }
+
+        
     }
 }

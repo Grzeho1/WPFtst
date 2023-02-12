@@ -11,6 +11,9 @@
          WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         ShowInTaskbar="True">
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0,0,0,1" CornerRadius="0" />
+    </WindowChrome.WindowChrome>
     <Window.Resources>
 
 
@@ -19,6 +22,7 @@
 
             ImageSource="Resources/menu.png"/>
 
+       
         <Style x:Key="font_style" TargetType="TextBlock">
             <Setter Property="FontFamily"
                     Value="Font/Roboto-Light.ttf"/>
@@ -113,6 +117,9 @@
         </Style>
 
 
+        
+
+
 
 
 
@@ -120,15 +127,17 @@
     </Window.Resources>
 
 
-    <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="/website-background-patterns-clipart-3.jpg" TileMode="Tile"/>
-        </Grid.Background>
+    <Grid Background="#FF1F3960">
         <Grid x:Name="navigace"
               HorizontalAlignment="Left"
               Width="65"
-              Background="#9d4edd"
               Panel.ZIndex="999">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF1B2838" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
 
 
             <StackPanel 
@@ -167,7 +176,7 @@
                     <ToggleButton x:Name="Tg_Btn" Grid.Column="0"
                               VerticalAlignment="Center"
                               HorizontalAlignment="Left"
-                              Margin="10,0,0,0"
+                              Margin="12,0,0,0"
                               Height="42"
                               Width="40"
                               BorderThickness="0"
@@ -231,7 +240,8 @@
 
 
                     <ListViewItem
-                                  Margin="0,0,0,15" Height="65" Selected="ListViewItem_Selected">
+                                  Margin="0,0,0,15" Height="65" 
+>
 
 
 
@@ -253,7 +263,7 @@
                                     Width="230">
 
                             <Image x:Name="obr_home" Source="/home.png"
-                                       Margin="12,0,0,0" Width="42"/>
+                                       Margin="8,0,0,0" Width="42"/>
 
                             <TextBlock Text="Home"
                                        Margin="25,0,0,0"
@@ -271,7 +281,8 @@
 
 
                     <ListViewItem HorizontalAlignment="Left"
-                                  Margin="0,0,0,15" Height="65" Selected="ListViewItem_Selected_1">
+                                  Margin="0,0,0,15" Height="65" Selected="ListViewItem_Selected_1"
+                                  >
 
                         <ListViewItem.ToolTip>
 
@@ -286,10 +297,14 @@
                         <StackPanel Orientation="Horizontal"
                                     Width="228" Height="75">
 
-                            <Image Source="Resources/user.png"
-                                   Stretch="None"
-                                   Margin="12,0,0,0" Height="57" Width="43"/>
-                            <TextBlock Text="Něco"
+                            <Image x:Name="obr_mail" Source="Resources/email.png"
+                                   
+                                   Margin="8,0,0,0" Width="42">
+                                <Image.OpacityMask>
+                                    <ImageBrush ImageSource="/Resources/email.png"/>
+                                </Image.OpacityMask>
+                            </Image>
+                            <TextBlock Text="Email"
                                        Margin="25,0,0,0"
                                        Style="{StaticResource font_style}"/>
 
@@ -331,6 +346,40 @@
 
                     </ListViewItem>
 
+
+
+
+                    <ListViewItem HorizontalAlignment="Left"
+                                  Margin="0,0,0,15" Height="65" Selected="ListViewItem_Selected_2">
+
+                        <ListViewItem.ToolTip>
+
+                            <ToolTip x:Name="tt_ně"
+                                 Content="Home"
+                             Style="{StaticResource tt_style}"
+                             />
+
+
+                        </ListViewItem.ToolTip>
+
+                        <StackPanel Orientation="Horizontal"
+                                    Width="228" Height="75">
+
+                            <Image Source="Resources/user.png"
+                                   Stretch="None"
+                                   Margin="12,0,0,0" Height="57" Width="43"/>
+                            <TextBlock Text="Něco"
+                                       Margin="25,0,0,0"
+                                       Style="{StaticResource font_style}"/>
+
+
+
+
+                        </StackPanel>
+
+                    </ListViewItem>
+
+
                 </ListView>
 
 
@@ -357,7 +406,7 @@
                 </TransformGroup>
             </Frame.RenderTransform>
 
-            
+
         </Frame>
     </Grid>
 
