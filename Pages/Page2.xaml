@@ -19,20 +19,24 @@
 
 
 
-    <Grid>
-        <ListView x:Name="EmailListView1" Margin="10" FontSize="15" Foreground="#FF000102" FontFamily="Roboto Lt" FontWeight="Bold" Background="Transparent" BorderBrush="{x:Null}" MouseDoubleClick="EmailListView1_MouseDoubleClick" >
+    <Grid >
+        <ListView x:Name="EmailListView1" Margin="10" FontSize="15" Foreground="Black" FontFamily="Roboto Lt" FontWeight="Bold" Background="Transparent" BorderBrush="{x:Null}" MouseDoubleClick="EmailListView1_MouseDoubleClick" >
             <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Odesílatel" DisplayMemberBinding="{Binding Sender}" Width="200"/>
+
+                
+                <GridView >
+                    <GridViewColumn Header="Odesílatel" DisplayMemberBinding="{Binding Sender}" Width="200" />
                     <GridViewColumn Header="Předmět" DisplayMemberBinding="{Binding Subject}" Width="400"/>
                     <GridViewColumn Header="Datum" DisplayMemberBinding="{Binding Date}" Width="200"/>
                 </GridView>
+               
             </ListView.View>
         </ListView>
 
-        <Popup x:Name="MessagePopup" StaysOpen="False" PlacementTarget="{Binding ElementName=EmailListView1}" Placement="Right" Width="600" Height="600" Uid="900" PopupAnimation="Scroll"  >
+        <Popup x:Name="MessagePopup" StaysOpen="False" PlacementTarget="{Binding ElementName=EmailListView1}" Placement="Right" Width="600" Height="600" Uid="900" PopupAnimation="Slide" >
             
-            <Grid Background="White">
+
+            <Grid>
                 <Grid.RowDefinitions >
                     <RowDefinition Height= "*"/>
                     <RowDefinition Height="50"/>
@@ -40,7 +44,7 @@
                 </Grid.RowDefinitions>
 
                 <Border BorderThickness="2" BorderBrush="Black">
-                    <TextBlock x:Name="MessageTextBlock" Background="White" Padding="10" TextWrapping="Wrap"  >
+                    <TextBlock x:Name="MessageTextBlock" Background="#FF1B2838" Padding="10" TextWrapping="Wrap" FontFamily="Roboto Lt" Foreground="White"  >
                     </TextBlock>
                 </Border>
                 <Button Content="Zavřít" Grid.Row="1" Grid.Column="1" Click="ClosePopupButton_Click" Height="50" Width="100" BorderBrush="Black" BorderThickness="2" FontFamily="Roboto Lt" FontWeight="Bold" />

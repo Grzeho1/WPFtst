@@ -94,6 +94,7 @@
 
 
         </Button>
+        <Button Content="rychle prihlaseni" HorizontalAlignment="Left" Margin="625,352,0,0" VerticalAlignment="Top" Width="97" Height="35" Click="Button_Click_1"/>
 
 
 

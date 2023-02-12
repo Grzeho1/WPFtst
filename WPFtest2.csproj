@@ -95,16 +95,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Global.cs" />
-    <Compile Include="Pages\Email.cs" />
-    <Compile Include="Pages\mails.cs" />
+    <Compile Include="Class\Global.cs" />
+    <Compile Include="Class\Email.cs" />
     <Compile Include="Pages\Page1.xaml.cs">
       <DependentUpon>Page1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Page2.xaml.cs">
       <DependentUpon>Page2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Uzivatel.cs" />
+    <Compile Include="Class\Uzivatel.cs" />
     <Page Include="AppMain.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

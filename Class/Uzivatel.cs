@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace WPFtest2
 {
+   
    public  class Uzivatel
     {
        public  string Login { get; set; }
         public string Heslo { get; set; }
         public string Role { get; set; }
+
+
+       
 
         public bool IsAdmin()
         {

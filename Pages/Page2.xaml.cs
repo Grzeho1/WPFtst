@@ -53,6 +53,7 @@ namespace WPFtest2.Pages
             {
                 client.Connect("imap.seznam.cz", 993, true);
                 client.Authenticate("testtest139@seznam.cz", "testujuaplikaci");
+               
                 IMailFolder inbox = client.Inbox;
                 inbox.Open(FolderAccess.ReadOnly);
                 int messageCount = inbox.Count;

@@ -59,7 +59,16 @@ namespace WPFtest2
 
         private void Main_Loaded(object sender, RoutedEventArgs e)
         {
-            lbl_uzivatel.Content = Global.PrihlasenyUzivatel.Login;
+
+            if (Global.PrihlasenyUzivatel != null)
+            {
+                lbl_uzivatel.Content = Global.PrihlasenyUzivatel.Login;
+            }
+            else
+            {
+                lbl_uzivatel = null;
+            }
+            
         }
 
         

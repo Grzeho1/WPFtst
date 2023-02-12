@@ -408,8 +408,10 @@
 
 
         </Frame>
-        <Label x:Name="lbl_uzivatel" Content="" HorizontalAlignment="Left" Margin="964,3,0,0" VerticalAlignment="Top" Width="154" Height="40" FontSize="24" FontFamily="Roboto Lt" Foreground="#FF0A7324" RenderTransformOrigin="0.537,0.396" FontWeight="Bold"/>
-        <Label Content="Uživatel:" HorizontalAlignment="Left" Margin="847,-1,0,0" VerticalAlignment="Top" Width="117" Height="46" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.97,0.699" FontFamily="Roboto Lt"/>
+        <Label x:Name="lbl_uzivatel" Content="" HorizontalAlignment="Left" Margin="964,3,0,0" VerticalAlignment="Top" Width="154" Height="42" FontSize="24" FontFamily="Roboto Lt" Foreground="#FF0A7324" RenderTransformOrigin="0.537,0.396" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="838,10,0,0" TextWrapping="Wrap" Text="Uživatel:" VerticalAlignment="Top" Height="23" Width="126"
+                   Style="{StaticResource font_style}" FontWeight="Bold"/>
+
     </Grid>
 
 

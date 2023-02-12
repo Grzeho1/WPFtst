@@ -98,5 +98,13 @@ namespace WPFtest2
         {
             Close();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            AppMain appMain = new AppMain();
+            appMain.Show();
+            this.Close();
+            
+        }
     }
 }
