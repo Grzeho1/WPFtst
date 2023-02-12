@@ -12,15 +12,15 @@
 
 
 
-       
+
 
 
     </Page.Resources>
 
-    
+
 
     <Grid>
-        <ListView x:Name="EmailListView1" Margin="10" FontSize="15" Foreground="#FF000102" FontFamily="Roboto Lt" FontWeight="Bold" Background="Transparent" BorderBrush="{x:Null}" >
+        <ListView x:Name="EmailListView1" Margin="10" FontSize="15" Foreground="#FF000102" FontFamily="Roboto Lt" FontWeight="Bold" Background="Transparent" BorderBrush="{x:Null}" MouseDoubleClick="EmailListView1_MouseDoubleClick" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Odesílatel" DisplayMemberBinding="{Binding Sender}" Width="200"/>
@@ -30,11 +30,28 @@
             </ListView.View>
         </ListView>
 
+        <Popup x:Name="MessagePopup" StaysOpen="False" PlacementTarget="{Binding ElementName=EmailListView1}" Placement="Right" Width="600" Height="600" Uid="900" PopupAnimation="Scroll"  >
+            
+            <Grid Background="White">
+                <Grid.RowDefinitions >
+                    <RowDefinition Height= "*"/>
+                    <RowDefinition Height="50"/>
+                    
+                </Grid.RowDefinitions>
+
+                <Border BorderThickness="2" BorderBrush="Black">
+                    <TextBlock x:Name="MessageTextBlock" Background="White" Padding="10" TextWrapping="Wrap"  >
+                    </TextBlock>
+                </Border>
+                <Button Content="Zavřít" Grid.Row="1" Grid.Column="1" Click="ClosePopupButton_Click" Height="50" Width="100" BorderBrush="Black" BorderThickness="2" FontFamily="Roboto Lt" FontWeight="Bold" />
+            </Grid>
+        </Popup>
+
 
 
     </Grid>
-    
-    
+
+
 
 
 

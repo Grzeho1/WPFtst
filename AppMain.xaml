@@ -22,7 +22,7 @@
 
             ImageSource="Resources/menu.png"/>
 
-       
+
         <Style x:Key="font_style" TargetType="TextBlock">
             <Setter Property="FontFamily"
                     Value="Font/Roboto-Light.ttf"/>
@@ -117,7 +117,7 @@
         </Style>
 
 
-        
+
 
 
 
@@ -240,7 +240,7 @@
 
 
                     <ListViewItem
-                                  Margin="0,0,0,15" Height="65" 
+                                  Margin="0,0,0,15" Height="65" Selected="ListViewItem_Selected" 
 >
 
 
@@ -287,7 +287,7 @@
                         <ListViewItem.ToolTip>
 
                             <ToolTip x:Name="tt_něco"
-                                 Content="Home"
+                                 Content="Email"
                              Style="{StaticResource tt_style}"
                              />
 
@@ -321,8 +321,8 @@
 
                         <ListViewItem.ToolTip>
 
-                            <ToolTip x:Name="tt_něc"
-                                 Content="Home"
+                            <ToolTip x:Name="tt_Email"
+                                 Content="Email"
                              Style="{StaticResource tt_style}"
                              />
 
@@ -408,6 +408,8 @@
 
 
         </Frame>
+        <Label x:Name="lbl_uzivatel" Content="" HorizontalAlignment="Left" Margin="964,3,0,0" VerticalAlignment="Top" Width="154" Height="40" FontSize="24" FontFamily="Roboto Lt" Foreground="#FF0A7324" RenderTransformOrigin="0.537,0.396" FontWeight="Bold"/>
+        <Label Content="Uživatel:" HorizontalAlignment="Left" Margin="847,-1,0,0" VerticalAlignment="Top" Width="117" Height="46" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.97,0.699" FontFamily="Roboto Lt"/>
     </Grid>
 
 

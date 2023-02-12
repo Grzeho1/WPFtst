@@ -29,7 +29,7 @@ namespace WPFtest2
         public MainWindow()
         {
             
-           InitializeComponent();
+            InitializeComponent();
         }
         SqlConnection con = new SqlConnection(@"Data Source=TOMAS;Initial Catalog=Projekt;Integrated Security=True");
 

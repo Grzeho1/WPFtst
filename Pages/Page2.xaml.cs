@@ -2,6 +2,7 @@
 using MailKit.Net.Imap;
 using MailKit.Search;
 using MimeKit;
+using Org.BouncyCastle.Asn1.Tsp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +44,8 @@ namespace WPFtest2.Pages
             LoadEmails();
         }
 
+        private int emailId = 0;
+
         private void LoadEmails()
         {
 
@@ -64,10 +67,13 @@ namespace WPFtest2.Pages
                     MimeMessage message = inbox.GetMessage(uid);
                     emails.Add(new Email
                     {
+
+                        Id = emailId++,
                         Sender = message.From.ToString(),
                         Subject = message.Subject,
-                        Date = message.Date.ToLocalTime().DateTime
-                    });
+                        Date = message.Date.ToLocalTime().DateTime,
+                        Body = message.TextBody,
+                    }) ; 
                 }
                 client.Disconnect(true);
             }
@@ -75,13 +81,31 @@ namespace WPFtest2.Pages
             EmailListView1.ItemsSource = emails;
 
         }
+       
+       
 
-        private class Email
+        private void ClosePopupButton_Click(object sender, RoutedEventArgs e)
         {
-            public string Sender { get; set; }
-            public string Subject { get; set; }
-            public DateTime Date { get; set; }
+            MessagePopup.IsOpen = false;
+        }
+
+        private void EmailListView1_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var selectedEmail = EmailListView1.SelectedItem as Email;
+
+            if (selectedEmail != null)
+            {
+                // Display the message content in the TextBlock
+                MessageTextBlock.Text = selectedEmail.Body;
+
+                // Show the pop-up
+                MessagePopup.IsOpen = true;
+            }
         }
     }
+
+       
+    
+    
        
 }
