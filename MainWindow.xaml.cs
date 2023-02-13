@@ -54,14 +54,17 @@ namespace WPFtest2
                 if (dt.Rows.Count > 0)
                 {
                     DataRow row = dt.Rows[0];
-                    Uzivatel uzivatel = new Uzivatel();
+                    Uzivatel user = new Uzivatel();
 
 
-                    uzivatel.Login = row["login"].ToString();
-                    uzivatel.Heslo = row["heslo"].ToString();
-                    uzivatel.Role = row["role"].ToString();
+                    user.Login = row["login"].ToString();
+                    user.Pass = row["heslo"].ToString();
+                    user.Role = row["role"].ToString();
+                    
+                      
 
-                    Global.PrihlasenyUzivatel = uzivatel;
+                        Global.LogedUser = user;
+                    
 
                     AppMain appMain = new AppMain();
                     appMain.Show();

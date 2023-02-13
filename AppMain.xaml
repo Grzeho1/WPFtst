@@ -408,9 +408,9 @@
 
 
         </Frame>
-        <Label x:Name="lbl_uzivatel" Content="" HorizontalAlignment="Left" Margin="964,3,0,0" VerticalAlignment="Top" Width="154" Height="42" FontSize="24" FontFamily="Roboto Lt" Foreground="#FF0A7324" RenderTransformOrigin="0.537,0.396" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left" Margin="838,10,0,0" TextWrapping="Wrap" Text="Uživatel:" VerticalAlignment="Top" Height="23" Width="126"
-                   Style="{StaticResource font_style}" FontWeight="Bold"/>
+        <Label x:Name="lbl_uzivatel" Content="" HorizontalAlignment="Left" Margin="964,3,0,0" VerticalAlignment="Top" Width="154" Height="30" FontSize="20" FontFamily="Roboto Lt" Foreground="#FF0A7324" RenderTransformOrigin="0.537,0.396" FontWeight="Bold"/>
+        <TextBlock Margin="858,3,0,0" TextWrapping="Wrap" Text="Uživatel:" VerticalAlignment="Top" Height="41" Width="101"
+                   Style="{StaticResource font_style}" FontWeight="Bold" FontSize="24"/>
 
     </Grid>
 

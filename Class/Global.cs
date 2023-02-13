@@ -8,7 +8,7 @@ namespace WPFtest2
 {
     public static class Global
     {
-        public static Uzivatel PrihlasenyUzivatel { get; set; }
+        public static Uzivatel LogedUser { get; set; }
 
     }
 }

@@ -53,7 +53,8 @@ namespace WPFtest2.Pages
             {
                 client.Connect("imap.seznam.cz", 993, true);
                 client.Authenticate("testtest139@seznam.cz", "testujuaplikaci");
-               
+                
+
                 IMailFolder inbox = client.Inbox;
                 inbox.Open(FolderAccess.ReadOnly);
                 int messageCount = inbox.Count;
@@ -63,7 +64,7 @@ namespace WPFtest2.Pages
                     startIndex = 0;
                 }
                 var uids = inbox.Search(SearchQuery.All);
-                foreach (UniqueId uid in uids.Reverse().Take(30).Reverse())
+                foreach (UniqueId uid in uids.Reverse().Take(30))
                 {
                     MimeMessage message = inbox.GetMessage(uid);
                     emails.Add(new Email

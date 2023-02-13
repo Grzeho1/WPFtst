@@ -10,7 +10,7 @@ namespace WPFtest2
    public  class Uzivatel
     {
        public  string Login { get; set; }
-        public string Heslo { get; set; }
+        public string Pass { get; set; }
         public string Role { get; set; }
 
 
