@@ -67,6 +67,8 @@ namespace WPFtest2
             else
             {
                 lbl_uzivatel.Content = "Guest";
+                
+                 
             }
             
         }

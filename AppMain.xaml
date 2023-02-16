@@ -380,6 +380,48 @@
                     </ListViewItem>
 
 
+                    <ListViewItem HorizontalAlignment="Left"
+                                  Margin="0,0,0,15" Height="65" Selected="ListViewItem_Selected_2">
+
+                        <ListViewItem.ToolTip>
+
+                            <ToolTip x:Name="tt_n"
+                                 Content="Nastavení"
+                             Style="{StaticResource tt_style}"
+                             />
+
+
+                        </ListViewItem.ToolTip>
+
+                        <StackPanel Orientation="Horizontal"
+                                    Width="230" Height="75">
+
+                            <Image
+                                   Margin="8,0,0,0" Height="65" Width="40" RenderTransformOrigin="0.5,0.5" Source="/settings.png">
+                                <Image.OpacityMask>
+                                    <ImageBrush Stretch="Uniform" ImageSource="/settings.png"/>
+                                </Image.OpacityMask>
+                                <Image.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-0.374"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Image.RenderTransform>
+                            </Image>
+                            <TextBlock Text="Nastavení"
+                                       Margin="25,0,0,0"
+                                       Style="{StaticResource font_style}"/>
+
+
+
+
+                        </StackPanel>
+
+                    </ListViewItem>
+
+
                 </ListView>
 
 

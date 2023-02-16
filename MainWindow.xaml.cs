@@ -18,6 +18,7 @@ using System.Data.Common;
 using Microsoft.SqlServer.Server;
 using System.Data;
 using WPFtest2.Pages;
+using System.Drawing.Design;
 
 namespace WPFtest2
 {
@@ -60,10 +61,10 @@ namespace WPFtest2
                     user.Login = row["login"].ToString();
                     user.Pass = row["heslo"].ToString();
                     user.Role = row["role"].ToString();
-                    
-                      
+                    user.Email = row["email"].ToString();
+                    user.EmailPass = row["emailheslo"].ToString();
 
-                        Global.LogedUser = user;
+                    Global.LogedUser = user;
                     
 
                     AppMain appMain = new AppMain();
