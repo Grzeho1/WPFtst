@@ -127,11 +127,11 @@
     </Window.Resources>
 
 
-    <Grid Background="#FF1F3960">
+    <Grid Background="#0081C9">
         <Grid x:Name="navigace"
               HorizontalAlignment="Left"
               Width="65"
-              Panel.ZIndex="999">
+              Panel.ZIndex="999" Opacity="0.83">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -450,7 +450,7 @@
 
 
         </Frame>
-        <Label x:Name="lbl_uzivatel" Content="" HorizontalAlignment="Left" Margin="964,3,0,0" VerticalAlignment="Top" Width="154" Height="30" FontSize="20" FontFamily="Roboto Lt" Foreground="#FF0A7324" RenderTransformOrigin="0.537,0.396" FontWeight="Bold"/>
+        <Label x:Name="lbl_uzivatel" Content="" HorizontalAlignment="Left" Margin="964,3,0,0" VerticalAlignment="Top" Width="154" Height="30" FontSize="20" FontFamily="Roboto Lt" Foreground="#FF89FC00" RenderTransformOrigin="0.537,0.396" FontWeight="Bold"/>
         <TextBlock Margin="858,3,0,0" TextWrapping="Wrap" Text="Uživatel:" VerticalAlignment="Top" Height="41" Width="101"
                    Style="{StaticResource font_style}" FontWeight="Bold" FontSize="24"/>
 

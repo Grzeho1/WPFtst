@@ -40,11 +40,11 @@
     </Window.Resources>
 
 
-    <Grid RenderTransformOrigin="0.5,0.5" Background="#FF1F3960" Uid="800">
+    <Grid RenderTransformOrigin="0.5,0.5" Background="#0081C9" Uid="800">
 
 
 
-        <Image x:Name="image" gif:ImageBehavior.AnimatedSource="C:\CSharp\WPFtest2\Resources\social-media-unscreen.gif" Height="82" Margin="348,0,356,0" VerticalAlignment="Top" Stretch="Fill"  Opacity="0.97" Source="/social-media.gif"  />
+        
         <Button x:Name="btn_exit" HorizontalAlignment="Left" Margin="708,30,0,0" VerticalAlignment="Top" Height="52" Width="59" BorderThickness="0" Click="btn_exit_Click" Style="{StaticResource MyButtonStyle}" >
             <Button.Background>
                 <ImageBrush ImageSource="/logout.png" Stretch="Uniform"/>
@@ -71,7 +71,7 @@
 
 
 
-        <Grid Margin="255,0,271,0" Uid="1">
+        <Grid Margin="255,0,271,0" Uid="1" Opacity="0.8">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -119,7 +119,7 @@
 
             <TextBox x:Name="textBoxHeslo" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="236" Height="28" FontFamily="Impact" FontSize="20" TextAlignment="Center" Background="{x:Null}" BorderThickness="0,0,0,2" ClipToBounds="True" Margin="20,275,0,0" InputScope="Password" Foreground="#FFCECECE"/>
 
-            <Image x:Name="imagee" gif:ImageBehavior.AnimatedSource="C:\CSharp\WPFtest2\Resources\social-media-unscreen.gif" Height="72" Margin="96,10,96,0" VerticalAlignment="Top" Stretch="Fill"  Opacity="0.97" Source="/social-media.gif" RenderTransformOrigin="0.5,0.5"  >
+            <Image x:Name="imagee" gif:ImageBehavior.AnimatedSource="C:\CSharp\WPFtest2\Resources\social-media-unscreen.gif" Height="72" Margin="96,10,96,0" VerticalAlignment="Top" Stretch="Fill"  Opacity="1.5" Source="/social-media.gif" RenderTransformOrigin="0.5,0.5"  >
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleX="-1"/>
