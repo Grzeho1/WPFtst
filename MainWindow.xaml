@@ -9,12 +9,14 @@
         Title="MainWindow" Height="450" Width="800"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
-        ShowInTaskbar="True" 
+        ShowInTaskbar="True" Uid="800" 
         >
-
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0,0,0,1" CornerRadius="0" />
     </WindowChrome.WindowChrome>
+
+
+
 
 
     <Window.Resources>
@@ -25,7 +27,7 @@
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}"
-                BorderThickness="{TemplateBinding BorderThickness}">
+                BorderThickness="0">
                             <ContentPresenter HorizontalAlignment="Center"
                             VerticalAlignment="Center"/>
                         </Border>
@@ -38,48 +40,11 @@
     </Window.Resources>
 
 
-    <Grid RenderTransformOrigin="0.5,0.5" Background="#FF1F3960">
-        <Button x:Name="tlacitkoPrihlas" Content="Přihlásit" HorizontalAlignment="Center" Margin="0,326,0,0" VerticalAlignment="Top" Height="75" Width="244" Click="Button_Click" Background="{x:Null}" FontSize="36" Foreground="#FFBAC8FF" FontFamily="Roboto Lt" FontWeight="Bold" IsDefault="True" Style="{StaticResource MyButtonStyle}"
-                >
+    <Grid RenderTransformOrigin="0.5,0.5" Background="#FF1F3960" Uid="800">
 
-            <Button.Effect>
-                <DropShadowEffect/>
 
-            </Button.Effect>
-            <Button.BorderBrush>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF0A5982" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.BorderBrush>
-        </Button>
-        <TextBox x:Name="textBoxLogin" HorizontalAlignment="Center" Margin="0,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235" Height="28" FontFamily="Impact" FontSize="20" TextAlignment="Center" Background="{x:Null}" BorderThickness="0,0,0,2" ClipToBounds="True" RenderTransformOrigin="0.5,0.5" InputScope="LogOnName">
-            <TextBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleX="0"/>
-                    <RotateTransform/>
-                    <TranslateTransform X="0"/>
-                </TransformGroup>
-            </TextBox.RenderTransform>
-        </TextBox>
-        <TextBox x:Name="textBoxHeslo" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="236" Height="28" FontFamily="Impact" FontSize="20" TextAlignment="Center" Background="{x:Null}" BorderThickness="0,0,0,2" ClipToBounds="True" Margin="278,275,0,0" InputScope="Password"/>
-        <Label Content="Uživatelské jméno" HorizontalAlignment="Center" Margin="0,117,0,0" VerticalAlignment="Top" Width="236" Height="44" FontSize="24" FontFamily="Bahnschrift SemiBold Condensed" Background="{x:Null}" BorderThickness="0,0,0,2" Foreground="#FFBAC8FF" HorizontalContentAlignment="Center">
-            <Label.Effect>
-                <DropShadowEffect/>
-            </Label.Effect>
-        </Label>
-        <Label Content="Heslo" HorizontalAlignment="Center" Margin="0,233,0,0" VerticalAlignment="Top" Width="236" Height="37" FontSize="24" FontFamily="Bahnschrift SemiBold Condensed" BorderThickness="0,0,0,2" SnapsToDevicePixels="True" Foreground="#FFBAC8FF" FontWeight="Medium" HorizontalContentAlignment="Center">
-            <Label.Effect>
-                <DropShadowEffect/>
-            </Label.Effect>
-        </Label>
+
         <Image x:Name="image" gif:ImageBehavior.AnimatedSource="C:\CSharp\WPFtest2\Resources\social-media-unscreen.gif" Height="82" Margin="348,0,356,0" VerticalAlignment="Top" Stretch="Fill"  Opacity="0.97" Source="/social-media.gif"  />
-        <Image HorizontalAlignment="Left" Height="57" Margin="265,139,0,0" VerticalAlignment="Top" Width="51" Source="/user.png" Opacity="0.5">
-            <Image.OpacityMask>
-                <ImageBrush Stretch="Fill" ImageSource="/user.png"/>
-            </Image.OpacityMask>
-        </Image>
         <Button x:Name="btn_exit" HorizontalAlignment="Left" Margin="708,30,0,0" VerticalAlignment="Top" Height="52" Width="59" BorderThickness="0" Click="btn_exit_Click" Style="{StaticResource MyButtonStyle}" >
             <Button.Background>
                 <ImageBrush ImageSource="/logout.png" Stretch="Uniform"/>
@@ -98,6 +63,81 @@
 
 
 
+        <Grid Margin="0,0,545,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="/Resources/kkkk.png" Stretch="Uniform"/>
+            </Grid.Background>
+        </Grid>
+
+
+
+        <Grid Margin="255,0,271,0" Uid="1">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF1B2838" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <Button x:Name="tlacitkoPrihlas" Content="Přihlásit" HorizontalAlignment="Center" Margin="0,321,0,0" VerticalAlignment="Top" Height="75" Width="244" Click="Button_Click" Background="{x:Null}" FontSize="36" Foreground="#FFBAC8FF" FontFamily="Roboto Lt" FontWeight="Bold" IsDefault="True" Style="{StaticResource MyButtonStyle}" MouseEnter="tlacitkoPrihlas_MouseEnter" MouseLeave="tlacitkoPrihlas_MouseLeave"
+                >
+
+                <Button.Effect>
+                    <DropShadowEffect/>
+
+                </Button.Effect>
+                <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FF0A5982" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+            </Button>
+
+
+            <Label Content="Uživatelské jméno" HorizontalAlignment="Center" Margin="0,117,0,0" VerticalAlignment="Top" Width="236" Height="44" FontSize="24" FontFamily="Bahnschrift SemiBold Condensed" Background="{x:Null}" BorderThickness="0,0,0,2" Foreground="#FFBAC8FF" HorizontalContentAlignment="Center">
+                <Label.Effect>
+                    <DropShadowEffect/>
+                </Label.Effect>
+            </Label>
+            <Label Content="Heslo" HorizontalAlignment="Center" Margin="0,225,0,0" VerticalAlignment="Top" Width="236" Height="37" FontSize="24" FontFamily="Bahnschrift SemiBold Condensed" BorderThickness="0,0,0,2" SnapsToDevicePixels="True" Foreground="#FFBAC8FF" FontWeight="Medium" HorizontalContentAlignment="Center">
+                <Label.Effect>
+                    <DropShadowEffect/>
+                </Label.Effect>
+            </Label>
+
+            <TextBox x:Name="textBoxLogin" HorizontalAlignment="Center" Margin="0,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235" Height="28" FontFamily="Impact" FontSize="20" TextAlignment="Center" Background="{x:Null}" BorderThickness="0,0,0,2" ClipToBounds="True" RenderTransformOrigin="0.5,0.5" InputScope="LogOnName" Foreground="#FFCECECE">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="0"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="0"/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+
+            <TextBox x:Name="textBoxHeslo" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="236" Height="28" FontFamily="Impact" FontSize="20" TextAlignment="Center" Background="{x:Null}" BorderThickness="0,0,0,2" ClipToBounds="True" Margin="20,275,0,0" InputScope="Password" Foreground="#FFCECECE"/>
+
+            <Image x:Name="imagee" gif:ImageBehavior.AnimatedSource="C:\CSharp\WPFtest2\Resources\social-media-unscreen.gif" Height="72" Margin="96,10,96,0" VerticalAlignment="Top" Stretch="Fill"  Opacity="0.97" Source="/social-media.gif" RenderTransformOrigin="0.5,0.5"  >
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+
+            <Button x:Name="tlacitkoRegistrace" Content="Registrace" Margin="76,410,66,15" Background="{x:Null}" FontFamily="Roboto Lt" FontSize="18"
+                    Style="{StaticResource MyButtonStyle}" FontStyle="Italic" Click="tlacitkoRegistrace_Click" />
+
+
+
+
+
+        </Grid >
 
 
 

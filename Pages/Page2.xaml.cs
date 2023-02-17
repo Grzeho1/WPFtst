@@ -33,7 +33,7 @@ namespace WPFtest2.Pages
         public Page2()
         {
             string mail = Global.LogedUser?.Email ?? null;
-            string mailPass = Global.LogedUser.EmailPass;
+            string mailPass = Global.LogedUser?.EmailPass ?? null;
             InitializeComponent();
             Email email = new Email();
             List<Email> mails = email.LoadEmails(mail,mailPass);
@@ -53,10 +53,10 @@ namespace WPFtest2.Pages
 
             if (selectedEmail != null)
             {
-                // Display the message content in the TextBlock
+                
                 MessageTextBlock.Text = selectedEmail.Body;
 
-                // Show the pop-up
+                
                 MessagePopup.IsOpen = true;
             }
         }

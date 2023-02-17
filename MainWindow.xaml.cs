@@ -29,7 +29,7 @@ namespace WPFtest2
     {
         public MainWindow()
         {
-            
+
             InitializeComponent();
         }
         SqlConnection con = new SqlConnection(@"Data Source=TOMAS;Initial Catalog=Projekt;Integrated Security=True");
@@ -37,11 +37,11 @@ namespace WPFtest2
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
 
-            
-           
-            
+
+
+
+
 
             try
             {
@@ -65,14 +65,14 @@ namespace WPFtest2
                     user.EmailPass = row["emailheslo"].ToString();
 
                     Global.LogedUser = user;
-                    
+
 
                     AppMain appMain = new AppMain();
                     appMain.Show();
                     this.Close();
-                    
+
                 }
-                  
+
 
 
                 else
@@ -90,7 +90,7 @@ namespace WPFtest2
                 con.Close();
             }
 
-          
+
         }
 
         private void tlacitkoPrihlas_GotFocus(object sender, RoutedEventArgs e)
@@ -108,7 +108,24 @@ namespace WPFtest2
             AppMain appMain = new AppMain();
             appMain.Show();
             this.Close();
-            
+
+        }
+
+        private void tlacitkoPrihlas_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ((Button)sender).Foreground = Brushes.Red;
+        }
+
+        private void tlacitkoPrihlas_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ((Button)sender).Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFBAC8FF"));
+        }
+
+        private void tlacitkoRegistrace_Click(object sender, RoutedEventArgs e)
+        {
+            RegWindow regWindow = new RegWindow(); 
+            regWindow.Show();
+            this.Hide();
         }
     }
 }
