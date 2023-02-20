@@ -70,7 +70,7 @@ namespace WPFtest2.Pages
 
             selectedEmail.MarkAsRead(Bmail, mailPass,selectedEmail.Body);
 
-            
+            NavigationService?.Refresh();
 
         }
 

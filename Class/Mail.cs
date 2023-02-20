@@ -99,6 +99,7 @@ namespace WPFtest2.Class
                 inbox.Open(FolderAccess.ReadWrite);
 
                 var uids = inbox.Search(SearchQuery.BodyContains(Body));
+
                 inbox.AddFlags(uids, MessageFlags.Seen, true);
 
 
