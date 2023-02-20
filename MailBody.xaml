@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="WPFtest2.MailBody"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFtest2"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="550">
+    <Grid Background="#FF988E8E" Margin="0,59,10,0">
+        <WebBrowser x:Name="EmailContentBrowser" />
+    </Grid>
+</UserControl>

@@ -5,10 +5,12 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WPFtest2.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="1000"
       Title="Page1">
 
     <Grid>
-        
+        <Label x:Name="lbl_pocetMailu" Content="Label" HorizontalAlignment="Left" Margin="910,42,0,0" VerticalAlignment="Top" Width="80" Height="50" FontSize="22" FontFamily="Roboto Lt" Foreground="#FFFF0404" RenderTransformOrigin="0.577,-0.154"/>
+        <Label x:Name="lbl_pocetMailu_Copy" Content="Nepřečtené maily:" HorizontalAlignment="Left" Margin="719,45,0,0" VerticalAlignment="Top" Width="186" Height="47" FontFamily="Roboto Lt" FontWeight="Bold" FontSize="20"/>
+
     </Grid>
 </Page>

@@ -9,54 +9,37 @@
       Title="Page2">
 
     <Page.Resources>
-
-
-
-
-
-
     </Page.Resources>
 
-
-
-    <Grid >
-        <ListView x:Name="EmailListView1" Margin="10" FontSize="15" Foreground="Black" FontFamily="Roboto Lt" FontWeight="Bold" Background="Transparent" BorderBrush="{x:Null}" MouseDoubleClick="EmailListView1_MouseDoubleClick" >
+    <Grid>
+        <ListView x:Name="EmailListView1" Margin="10" FontSize="15" Foreground="Black" FontFamily="Roboto Lt" FontWeight="Bold" Background="Transparent" BorderBrush="{x:Null}" MouseDoubleClick="EmailListView1_MouseDoubleClick">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsRead}" Value="False">
+                            <Setter Property="Foreground" Value="#FF1E1E"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.ItemContainerStyle>
             <ListView.View>
-
-                
-                <GridView >
-                    <GridViewColumn Header="Odesílatel" DisplayMemberBinding="{Binding Sender}" Width="200" />
+                <GridView>
+                    <GridViewColumn Header="Odesílatel" DisplayMemberBinding="{Binding Sender}" Width="200"  />
                     <GridViewColumn Header="Předmět" DisplayMemberBinding="{Binding Subject}" Width="400"/>
                     <GridViewColumn Header="Datum" DisplayMemberBinding="{Binding Date}" Width="200"/>
                 </GridView>
-               
             </ListView.View>
         </ListView>
 
-        <Popup x:Name="MessagePopup" StaysOpen="False" PlacementTarget="{Binding ElementName=EmailListView1}" Placement="Right" Width="600" Height="600" Uid="900" PopupAnimation="Slide" >
-            
-
-            <Grid>
-                <Grid.RowDefinitions >
-                    <RowDefinition Height= "*"/>
-                    <RowDefinition Height="50"/>
-                    
-                </Grid.RowDefinitions>
-
-                <Border BorderThickness="2" BorderBrush="Black">
-                    <TextBlock x:Name="MessageTextBlock" Background="#FF1B2838" Padding="10" TextWrapping="Wrap" FontFamily="Roboto Lt" Foreground="White"  >
-                    </TextBlock>
+        <Popup x:Name="MessagePopup" StaysOpen="False" PlacementTarget="{Binding ElementName=EmailListView1}" Placement="Right" Width="600" Height="600" Uid="900" OpacityMask="#FF9A5B5B"  >
+            <Grid Background="#0081C9">
+                <Border BorderThickness="0" BorderBrush="Black">
+                    <!-- Text field for email body -->
+                    <TextBox x:Name="EmailBodyTextBox" TextWrapping="Wrap" AcceptsReturn="True" Margin="10" />
                 </Border>
-                <Button Content="Zavřít" Grid.Row="1" Grid.Column="1" Click="ClosePopupButton_Click" Height="50" Width="100" BorderBrush="Black" BorderThickness="2" FontFamily="Roboto Lt" FontWeight="Bold" />
+                <!-- Button for closing the popup window -->
+                <Button Content="Zavřít" Click="ClosePopupButton_Click" Height="50" Width="100" BorderBrush="Black" BorderThickness="2" FontFamily="Roboto Lt" FontWeight="Bold" Margin="10" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
             </Grid>
         </Popup>
-
-
-
     </Grid>
-
-
-
-
-
 </Page>

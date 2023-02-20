@@ -20,6 +20,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using static MailKit.Net.Imap.ImapMailboxFilter;
+using WPFtest2.Class;
+using System.Security.Cryptography.X509Certificates;
 
 namespace WPFtest2.Pages
 {
@@ -28,20 +30,28 @@ namespace WPFtest2.Pages
     /// </summary>
     public partial class Page2 : Page
     {
+        string Bmail = Global.LogedUser?.Email ?? null;
+        string mailPass = Global.LogedUser?.EmailPass ?? null;
+        
 
 
         public Page2()
         {
-            string mail = Global.LogedUser?.Email ?? null;
-            string mailPass = Global.LogedUser?.EmailPass ?? null;
+            
             InitializeComponent();
-            Email email = new Email();
-            List<Email> mails = email.LoadEmails(mail,mailPass);
+            Mail Newemail = new Mail();
+            List<Mail> mails = Newemail.LoadEmails(Bmail, mailPass);
             EmailListView1.ItemsSource = mails;
+
+           
+
+            //Vraci počet neprečtených mailů
+
+            int unreadCount = mails.Count(email => !email.IsRead);
+            Global.LogedUser.Unread = unreadCount;
+            
         }
-
-
-
+       
         private void ClosePopupButton_Click(object sender, RoutedEventArgs e)
         {
             MessagePopup.IsOpen = false;
@@ -49,21 +59,27 @@ namespace WPFtest2.Pages
 
         private void EmailListView1_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            var selectedEmail = EmailListView1.SelectedItem as Email;
+            
+            var selectedEmail = EmailListView1.SelectedItem as Mail;
+            EmailBodyTextBox.Text = selectedEmail.Body;
 
             if (selectedEmail != null)
             {
-                
-                MessageTextBlock.Text = selectedEmail.Body;
-
-                
                 MessagePopup.IsOpen = true;
             }
+
+            selectedEmail.MarkAsRead(Bmail, mailPass,selectedEmail.Body);
+
+            
+
         }
+
+        
     }
+}
 
        
     
     
        
-}
+

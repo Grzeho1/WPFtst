@@ -125,7 +125,7 @@ namespace WPFtest2
         {
             RegWindow regWindow = new RegWindow(); 
             regWindow.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

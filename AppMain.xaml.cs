@@ -15,17 +15,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WPFtest2.Pages;
 
+
 namespace WPFtest2
 {
     /// <summary>
     /// Interakční logika pro AppMain.xaml
     /// </summary>
     public partial class AppMain : Window
-    {
+    {   
+        
         public AppMain()
         {
             InitializeComponent();
+            
+            
         }
+       
+     
 
         private void Buttona_Click(object sender, RoutedEventArgs e)
         {
@@ -71,6 +77,8 @@ namespace WPFtest2
                 
                  
             }
+
+           
             
         }
 

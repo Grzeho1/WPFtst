@@ -13,18 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPFtest2.Pages
+namespace WPFtest2
 {
     /// <summary>
-    /// Interakční logika pro Page1.xaml
+    /// Interakční logika pro MailBody.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class MailBody : UserControl
     {
-        public Page1()
+        public MailBody()
         {
             InitializeComponent();
-            lbl_pocetMailu.Content = Global.LogedUser.Unread;
-
         }
     }
 }

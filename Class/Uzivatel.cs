@@ -14,6 +14,8 @@ namespace WPFtest2
         public string Role { get; set; }
         public string Email { get; set; }
 
+        public int Unread { get; set; }
+
        public string EmailPass { get; set; }
 
         public bool IsAdmin()
