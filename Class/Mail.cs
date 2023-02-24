@@ -15,9 +15,8 @@ namespace WPFtest2.Class
     public class Mail
     {
         
-            private List<Mail> emails = new List<Mail>();
+        private List<Mail> emails = new List<Mail>();
         private int emailId = 0;
-
 
         public string Sender { get; set; }
         public string Subject { get; set; }
@@ -85,7 +84,7 @@ namespace WPFtest2.Class
 
         // Oznaceni mailu jako přectený
 
-        public void MarkAsRead(string mail, string mailPass,string Body)
+        public void MarkAsRead(string mail, string mailPass,int messageId)
 
         {
             using (ImapClient client = new ImapClient())
@@ -98,7 +97,7 @@ namespace WPFtest2.Class
                 IMailFolder inbox = client.Inbox;
                 inbox.Open(FolderAccess.ReadWrite);
 
-                var uids = inbox.Search(SearchQuery.BodyContains(Body));
+                var uids = inbox.Search(SearchQuery.HeaderContains("Message-Id", messageId.ToString()));
 
                 inbox.AddFlags(uids, MessageFlags.Seen, true);
 

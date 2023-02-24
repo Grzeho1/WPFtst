@@ -19,6 +19,8 @@ using Microsoft.SqlServer.Server;
 using System.Data;
 using WPFtest2.Pages;
 using System.Drawing.Design;
+using System.Security.Cryptography.X509Certificates;
+using System.Diagnostics.Eventing.Reader;
 
 namespace WPFtest2
 {
@@ -27,21 +29,21 @@ namespace WPFtest2
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
-
-            InitializeComponent();
+            
+        InitializeComponent();
+           
         }
-        SqlConnection con = new SqlConnection(@"Data Source=TOMAS;Initial Catalog=Projekt;Integrated Security=True");
+        
+        SqlConnection con = new SqlConnection(@"Data Source=TOMAS;Initial Catalog=Projekt;Integrated Security=True"); // connection string
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-
-
-
-
+            // nacteni uzivatele
 
             try
             {
@@ -50,30 +52,45 @@ namespace WPFtest2
 
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
-
+                
 
                 if (dt.Rows.Count > 0)
                 {
                     DataRow row = dt.Rows[0];
                     Uzivatel user = new Uzivatel();
-
+                    AppMain appMain = new AppMain();
 
                     user.Login = row["login"].ToString();
                     user.Pass = row["heslo"].ToString();
-                    user.Role = row["role"].ToString();
-                    user.Email = row["email"].ToString();
-                    user.EmailPass = row["emailheslo"].ToString();
-
+                    user.Role = row["role"].ToString().Substring(0,5);
+                    user.Email = row["email"].ToString() ?? "";
+                    user.EmailPass = row["emailheslo"].ToString() ?? "";
+                    
                     Global.LogedUser = user;
+                    var btnAdmin = appMain.FindName("btnAdmin") as Button;     // Nalezení tlačítka v okně
 
+                    // kontrola jestli je danný uživatel admin a ¨zviditelnení admin tlacitka
+                    bool isAdmin = user.IsAdmin(user);
 
-                    AppMain appMain = new AppMain();
+                    if (isAdmin==true)
+                    {
+                        
+                        btnAdmin.Visibility = Visibility.Visible;
+
+                    }
+                    else 
+                    {
+
+                        btnAdmin.Visibility = Visibility.Collapsed;
+
+                    }
+
                     appMain.Show();
                     this.Close();
+                    
 
                 }
-
-
+                
 
                 else
                 {

@@ -40,7 +40,7 @@ namespace WPFtest2
             
             Page1 page1= new Page1();
             Page2 page2 = new Page2();
-            
+            PageAdmin pageAdmin = new PageAdmin();
         }
 
         private void ListViewItem_Selected(object sender, RoutedEventArgs e)
@@ -82,6 +82,10 @@ namespace WPFtest2
             
         }
 
-        
+        private void btnAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            PageAdmin pageAdmin = new PageAdmin();
+            Main.Navigate(pageAdmin);
+        }
     }
 }

@@ -40,7 +40,7 @@
     </Window.Resources>
 
 
-    <Grid RenderTransformOrigin="0.5,0.5" Background="#0081C9" Uid="800">
+    <Grid RenderTransformOrigin="0.5,0.5" Background="#1B2430" Uid="800">
 
 
 
@@ -95,12 +95,12 @@
             </Button>
 
 
-            <Label Content="Uživatelské jméno" HorizontalAlignment="Center" Margin="0,117,0,0" VerticalAlignment="Top" Width="236" Height="44" FontSize="24" FontFamily="Bahnschrift SemiBold Condensed" Background="{x:Null}" BorderThickness="0,0,0,2" Foreground="#FFBAC8FF" HorizontalContentAlignment="Center">
+            <Label Content="Uživatelské jméno" HorizontalAlignment="Center" Margin="0,117,0,0" VerticalAlignment="Top" Width="236" Height="44" FontSize="24" FontFamily="Bahnschrift SemiBold Condensed" Background="{x:Null}" BorderThickness="0,0,0,2" Foreground="White" HorizontalContentAlignment="Center">
                 <Label.Effect>
                     <DropShadowEffect/>
                 </Label.Effect>
             </Label>
-            <Label Content="Heslo" HorizontalAlignment="Center" Margin="0,225,0,0" VerticalAlignment="Top" Width="236" Height="37" FontSize="24" FontFamily="Bahnschrift SemiBold Condensed" BorderThickness="0,0,0,2" SnapsToDevicePixels="True" Foreground="#FFBAC8FF" FontWeight="Medium" HorizontalContentAlignment="Center">
+            <Label Content="Heslo" HorizontalAlignment="Center" Margin="0,225,0,0" VerticalAlignment="Top" Width="236" Height="37" FontSize="24" FontFamily="Bahnschrift SemiBold Condensed" BorderThickness="0,0,0,2" SnapsToDevicePixels="True" Foreground="White" FontWeight="Medium" HorizontalContentAlignment="Center">
                 <Label.Effect>
                     <DropShadowEffect/>
                 </Label.Effect>

@@ -1,4 +1,4 @@
-﻿<Page x:Class="WPFtest2.Pages.Page2"
+﻿<Page x:Class="WPFtest2.Pages.PageAdmin"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,14 +6,11 @@
       xmlns:local="clr-namespace:WPFtest2.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Page2">
+      Title="PageAdmin">
 
     <Page.Resources>
-        
 
-        
-
-            <Style TargetType="{x:Type ListViewItem}">
+        <Style TargetType="{x:Type ListBoxItem}">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
             <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
@@ -46,45 +43,48 @@
             </Setter>
         </Style>
 
-        
-            
+
+
+
+
     </Page.Resources>
-    
-    
 
-    <Grid>
-        <ListView x:Name="EmailListView1" Margin="10" FontSize="15" Foreground="White" FontFamily="Roboto Lt" Background="Transparent" BorderBrush="{x:Null}" MouseDoubleClick="EmailListView1_MouseDoubleClick" SelectionMode="Single" >
-            <ListView.ItemContainerStyle>
-                <Style TargetType="{x:Type ListViewItem}">
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding IsRead}" Value="False">
-                            <Setter Property="Foreground" Value="#FF1E1E"/>
-                        </DataTrigger>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="Transparent"  />
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </ListView.ItemContainerStyle>
 
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Odesílatel" DisplayMemberBinding="{Binding Sender}" Width="200" />
-                    <GridViewColumn Header="Předmět" DisplayMemberBinding="{Binding Subject}" Width="400"/>
-                    <GridViewColumn Header="Datum" DisplayMemberBinding="{Binding Date}" Width="200"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
 
-        <Popup x:Name="MessagePopup" StaysOpen="False" PlacementTarget="{Binding ElementName=EmailListView1}" Placement="Right" Width="600" Height="600" Uid="900" OpacityMask="#FF9A5B5B"  >
-            <Grid Background="#0081C9">
-                <Border BorderThickness="0" BorderBrush="Black">
 
-                    <TextBox x:Name="EmailBodyTextBox" TextWrapping="Wrap" AcceptsReturn="True" Margin="10"  />
-                </Border>
+
+
+        <Grid>
+        <Grid Height="NaN" Margin="0,10,384,0" Width="NaN">
+            <ListView x:Name="UsersListView" Margin="10" FontSize="15" FontFamily="Roboto Lt" Background="Transparent" Foreground="White">
+
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Transparent"  />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListView.ItemContainerStyle>
+
+                <ListView.View>
+                    
+
+                    <GridView>
+                        <GridViewColumn Header="Login" DisplayMemberBinding="{Binding Login}"  Width="100"/>
+                        <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" Width="180"/>
+                        <GridViewColumn Header="Role" DisplayMemberBinding="{Binding Role}" Width="100"/>
+                    </GridView>
+
+
+                </ListView.View>
                 
-                <Button Content="Zavřít" Click="ClosePopupButton_Click" Height="50" Width="100" BorderBrush="Black" BorderThickness="2" FontFamily="Roboto Lt" FontWeight="Bold" Margin="10" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
-            </Grid>
-        </Popup>
+                
+            </ListView>
+            
+            
+        </Grid>
+
     </Grid>
 </Page>

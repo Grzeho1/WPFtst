@@ -42,14 +42,21 @@ namespace WPFtest2.Pages
             Mail Newemail = new Mail();
             List<Mail> mails = Newemail.LoadEmails(Bmail, mailPass);
             EmailListView1.ItemsSource = mails;
+             
 
-           
 
             //Vraci počet neprečtených mailů
-
-            int unreadCount = mails.Count(email => !email.IsRead);
-            Global.LogedUser.Unread = unreadCount;
             
+            if (Global.LogedUser != null)
+            {
+                int unreadCount = mails != null ? mails.Count(email => !email.IsRead) : 0;
+                Global.LogedUser.Unread = unreadCount;
+            }
+            else
+            {
+                Global.LogedUser = null;
+            }
+
         }
        
         private void ClosePopupButton_Click(object sender, RoutedEventArgs e)
@@ -68,9 +75,9 @@ namespace WPFtest2.Pages
                 MessagePopup.IsOpen = true;
             }
 
-            selectedEmail.MarkAsRead(Bmail, mailPass,selectedEmail.Body);
+            selectedEmail.MarkAsRead(Bmail, mailPass,selectedEmail.Id);
 
-            NavigationService?.Refresh();
+            
 
         }
 

@@ -12,26 +12,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFtest2.Class;
 
 namespace WPFtest2.Pages
 {
     /// <summary>
-    /// Interakční logika pro Page1.xaml
+    /// Interakční logika pro PageAdmin.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class PageAdmin : Page
     {
-        public Page1()
+        public PageAdmin()
         {
+            
             InitializeComponent();
-            if (Global.LogedUser != null && Global.LogedUser.Unread != null)
-            {
-                lbl_pocetMailu.Content = Global.LogedUser.Unread;
-            }
-            else
-            {
-                lbl_pocetMailu.Content = 0; 
-            }
-
+            Uzivatel uzivatel = new Uzivatel();
+            List<Uzivatel> uzivatels = uzivatel.GetAll();
+            UsersListView.ItemsSource = uzivatels;
         }
+            
+            
+
     }
 }

@@ -127,7 +127,7 @@
     </Window.Resources>
 
 
-    <Grid Background="#0081C9">
+    <Grid Background="#1B2430">
         <Grid x:Name="navigace"
               HorizontalAlignment="Left"
               Width="65"
@@ -453,6 +453,10 @@
         <Label x:Name="lbl_uzivatel" Content="" HorizontalAlignment="Left" Margin="964,3,0,0" VerticalAlignment="Top" Width="154" Height="30" FontSize="20" FontFamily="Roboto Lt" Foreground="#FF89FC00" RenderTransformOrigin="0.537,0.396" FontWeight="Bold"/>
         <TextBlock Margin="858,3,0,0" TextWrapping="Wrap" Text="Uživatel:" VerticalAlignment="Top" Height="41" Width="101"
                    Style="{StaticResource font_style}" FontWeight="Bold" FontSize="24"/>
+        <Button x:Name="btnAdmin" Content="Admin" HorizontalAlignment="Left" Margin="329,10,0,0" VerticalAlignment="Top" Height="28" Width="116" Click="btnAdmin_Click"/>
+
+
+
 
     </Grid>
 

@@ -72,13 +72,14 @@ namespace WPFtest2
                         else
                         {
 
-                            string query = "INSERT INTO Login (login, heslo, email,emailheslo) VALUES (@login, @hesloString, @email,@hesloMailString)";
+                            string query = "INSERT INTO Login (login, heslo, email,emailheslo,role) VALUES (@login, @hesloString, @email, @hesloMailString, @role)";
                             SqlCommand cmd = new SqlCommand(query, con);
                             
                             cmd.Parameters.AddWithValue("@login", login);
                             cmd.Parameters.AddWithValue("@hesloString", passString);
                             cmd.Parameters.AddWithValue("@email", email);
                             cmd.Parameters.AddWithValue("@hesloMailString", passMailString);
+                            cmd.Parameters.AddWithValue("role", "user");
 
                             MessageBox.Show("Registrace proběhla uspěšně", ":)");
                             txtHeslo.Clear();
@@ -133,6 +134,13 @@ namespace WPFtest2
             return loginFree;
 
 
+        }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
     }
 }

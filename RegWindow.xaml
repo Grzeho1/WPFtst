@@ -27,7 +27,7 @@
         </Style>
     </Window.Resources>
 
-    <Grid Background="#0081C9">
+    <Grid Background="#FF1B2430">
 
 
         <Grid Margin="0,0,459,0">
@@ -35,12 +35,14 @@
                 <ImageBrush ImageSource="/Resources/kkkk.png" Stretch="Uniform"/>
             </Grid.Background>
 
+            <Button x:Name="btn_back" Content="Zpět" Margin="10,10,258,407" Background="Transparent" FontFamily="Roboto Lt" FontSize="18" FontWeight="Bold" Width="NaN" BorderThickness="0" Foreground="#FFCECECE" Click="btn_back_Click"/>
+
 
         </Grid>
-        <Label x:Name="lblRegLogin" Content="Uživatelské jméno" HorizontalAlignment="Center" Margin="0,19,0,0" VerticalAlignment="Top" Width="150" FontFamily="Roboto Lt" FontSize="16" HorizontalContentAlignment="Center"/>
-        <PasswordBox x:Name="txtHeslo" HorizontalAlignment="Center" Margin="0,115,0,0" VerticalAlignment="Top" Width="152" FontSize="16" Background="{x:Null}" BorderThickness="0,0,0,2" ClipToBounds="True" RenderTransformOrigin="0.5,0.5"/>
-        <Label x:Name="lblRegHeslo" Content="Heslo" HorizontalAlignment="Center" Margin="0,81,0,0" VerticalAlignment="Top" FontFamily="Roboto Lt" FontSize="16" RenderTransformOrigin="1.316,0.524" Width="152" HorizontalContentAlignment="Center" Height="29"/>
-        <Label x:Name="lblHesloZnovu" Content="Heslo znovu" HorizontalAlignment="Center" Margin="0,149,0,0" VerticalAlignment="Top" FontFamily="Roboto Lt" FontSize="16" Width="142" HorizontalContentAlignment="Center"/>
+        <Label x:Name="lblRegLogin" Content="Uživatelské jméno" HorizontalAlignment="Center" Margin="0,19,0,0" VerticalAlignment="Top" Width="150" FontFamily="Roboto Lt" FontSize="16" HorizontalContentAlignment="Center" Foreground="White"/>
+        <PasswordBox x:Name="txtHeslo" HorizontalAlignment="Center" Margin="0,115,0,0" VerticalAlignment="Top" Width="152" FontSize="16" Background="{x:Null}" BorderThickness="0,0,0,2" ClipToBounds="True" RenderTransformOrigin="0.5,0.5" Height="29"/>
+        <Label x:Name="lblRegHeslo" Content="Heslo" HorizontalAlignment="Center" Margin="0,81,0,0" VerticalAlignment="Top" FontFamily="Roboto Lt" FontSize="16" RenderTransformOrigin="1.316,0.524" Width="152" HorizontalContentAlignment="Center" Height="29" Foreground="White"/>
+        <Label x:Name="lblHesloZnovu" Content="Heslo znovu" HorizontalAlignment="Center" Margin="0,149,0,0" VerticalAlignment="Top" FontFamily="Roboto Lt" FontSize="16" Width="142" HorizontalContentAlignment="Center" Foreground="White"/>
 
         <TextBox x:Name="txtLogin" HorizontalAlignment="Center" Margin="0,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" Height="28" FontFamily="Impact" FontSize="20" TextAlignment="Center" Background="{x:Null}" BorderThickness="0,0,0,2" ClipToBounds="True" RenderTransformOrigin="0.5,0.5" InputScope="LogOnName" Foreground="#FFCECECE">
 
@@ -49,8 +51,8 @@
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="596,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" Height="28" FontFamily="Impact" FontSize="20" TextAlignment="Center" Background="{x:Null}" BorderThickness="0,0,0,2" ClipToBounds="True" RenderTransformOrigin="0.5,0.5" InputScope="LogOnName" Foreground="#FFCECECE">
 
         </TextBox>
-        <Label x:Name="lblMail" Content="Email" HorizontalAlignment="Left" Margin="596,19,0,0" VerticalAlignment="Top" FontFamily="Roboto Lt" FontSize="16" Width="148" FontStretch="SemiCondensed" HorizontalContentAlignment="Center"/>
-        <Label Content="Heslo do Emailu" HorizontalAlignment="Left" Margin="596,81,0,0" VerticalAlignment="Top" FontFamily="Roboto Lt" FontSize="16" Width="148" HorizontalContentAlignment="Center"/>
+        <Label x:Name="lblMail" Content="Email" HorizontalAlignment="Left" Margin="596,19,0,0" VerticalAlignment="Top" FontFamily="Roboto Lt" FontSize="16" Width="148" FontStretch="SemiCondensed" HorizontalContentAlignment="Center" Foreground="White"/>
+        <Label Content="Heslo do Emailu" HorizontalAlignment="Left" Margin="596,81,0,0" VerticalAlignment="Top" FontFamily="Roboto Lt" FontSize="16" Width="148" HorizontalContentAlignment="Center" Foreground="White"/>
         <PasswordBox x:Name="txtHeslo_Copy" HorizontalAlignment="Center" Margin="0,178,0,0" VerticalAlignment="Top" Width="152" FontSize="16" Background="{x:Null}" BorderThickness="0,0,0,2" ClipToBounds="True" RenderTransformOrigin="0.5,0.5" Height="29"/>
         <PasswordBox x:Name="txtHesloMail" HorizontalAlignment="Left" Margin="592,115,0,0" VerticalAlignment="Top" Width="152" FontSize="16" Background="{x:Null}" BorderThickness="0,0,0,2" ClipToBounds="True" RenderTransformOrigin="0.5,0.5" Height="29"/>
 
