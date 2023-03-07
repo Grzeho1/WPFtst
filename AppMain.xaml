@@ -438,7 +438,7 @@
 
 
         </Grid>
-        <Frame x:Name="Main" Content="" Margin="98,65,27,0" NavigationUIVisibility="Hidden" RenderTransformOrigin="0.5,0.5" Loaded="Main_Loaded" >
+        <Frame x:Name="Main" Content="" Margin="62,65,27,0" NavigationUIVisibility="Hidden" RenderTransformOrigin="0.5,0.5" Loaded="Main_Loaded" Width="NaN" >
             <Frame.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

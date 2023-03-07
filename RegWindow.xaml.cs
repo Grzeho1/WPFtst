@@ -51,6 +51,7 @@ namespace WPFtest2
 
                 try
                 {
+                    var emaill = new System.Net.Mail.MailAddress(email);
 
                     if (checkLogin() == true || login != "" || passString != "" || passString != passZnovulString)
 
@@ -69,12 +70,13 @@ namespace WPFtest2
 
 
 
+
                         else
                         {
 
                             string query = "INSERT INTO Login (login, heslo, email,emailheslo,role) VALUES (@login, @hesloString, @email, @hesloMailString, @role)";
                             SqlCommand cmd = new SqlCommand(query, con);
-                            
+
                             cmd.Parameters.AddWithValue("@login", login);
                             cmd.Parameters.AddWithValue("@hesloString", passString);
                             cmd.Parameters.AddWithValue("@email", email);
@@ -88,9 +90,9 @@ namespace WPFtest2
                             txtHesloMail.Clear();
                             txtEmail.Clear();
 
-                           cmd.ExecuteNonQuery();
+                            cmd.ExecuteNonQuery();
 
-                            
+
                             MainWindow mainWindow = new MainWindow();
                             mainWindow.Show();
                             this.Close();
@@ -103,6 +105,11 @@ namespace WPFtest2
                     MessageBox.Show("Chyba spojení", "Chyba");
 
                 }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Email neni ve správném formátu");
+                }
+
                 finally
                 {
                     con.Close();

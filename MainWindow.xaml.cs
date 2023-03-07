@@ -47,9 +47,14 @@ namespace WPFtest2
 
             try
             {
-                String querry = "SELECT * FROM  Login WHERE login = '" + textBoxLogin.Text + "' AND heslo='" + textBoxHeslo.Text + "'";
-                SqlDataAdapter adapter = new SqlDataAdapter(querry, con);
+                String querry = "SELECT * FROM  Login WHERE login = @login And heslo=@heslo";
+                SqlCommand cmd = new SqlCommand(querry,con);
+                cmd.Parameters.AddWithValue("login",textBoxLogin.Text);
+                cmd.Parameters.AddWithValue("heslo",textBoxHeslo.Text);
 
+
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 
@@ -62,7 +67,7 @@ namespace WPFtest2
 
                     user.Login = row["login"].ToString();
                     user.Pass = row["heslo"].ToString();
-                    user.Role = row["role"].ToString().Substring(0,5);
+                    user.Role = row["role"].ToString().Substring(0,5)?? "";
                     user.Email = row["email"].ToString() ?? "";
                     user.EmailPass = row["emailheslo"].ToString() ?? "";
                     

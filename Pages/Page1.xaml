@@ -9,8 +9,37 @@
       Title="Page1">
 
     <Grid>
-        <Label x:Name="lbl_pocetMailu" Content="Label" HorizontalAlignment="Left" Margin="910,42,0,0" VerticalAlignment="Top" Width="80" Height="50" FontSize="22" FontFamily="Roboto Lt" Foreground="#FFFF0404" RenderTransformOrigin="0.577,-0.154"/>
-        <Label x:Name="lbl_pocetMailu_Copy" Content="Nepřečtené maily:" HorizontalAlignment="Left" Margin="719,45,0,0" VerticalAlignment="Top" Width="186" Height="47" FontFamily="Roboto Lt" FontWeight="Bold" FontSize="20" Foreground="White"/>
+        <Label x:Name="lbl_pocetMailu" Content="Label" HorizontalAlignment="Left" Margin="819,375,0,0" VerticalAlignment="Top" Width="80" Height="50" FontSize="22" FontFamily="Roboto Lt" Foreground="#FFFF0404" RenderTransformOrigin="0.577,-0.154"/>
+        <Label x:Name="lbl_pocetMailu_Copy" Content="Nepřečtené maily:" HorizontalAlignment="Left" Margin="633,375,0,0" VerticalAlignment="Top" Width="186" Height="47" FontFamily="Roboto Lt" FontWeight="Bold" FontSize="20" Foreground="White"/>
+
+
+
+        <Grid  Margin="0,30,0,550" Height="Auto" HorizontalAlignment="Center" Width="980" >
+            <Grid.Background>
+                <ImageBrush ImageSource="/Resources/bSRVxY.jpg" TileMode="Tile" Stretch="Fill"/>
+            </Grid.Background>
+            <TextBlock x:Name="textBlokPocasi" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="42" Width="301" FontFamily="Roboto Lt" FontSize="36" Foreground="White" RenderTransformOrigin="0.529,0.533" Margin="331,0,0,0"/>
+            <TextBlock x:Name="textBlockpocasi" HorizontalAlignment="Left" Margin="637,2,0,0" VerticalAlignment="Top" Height="41" Width="333" Foreground="White" FontFamily="Roboto Lt" FontSize="36" TextAlignment="Left"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Počasí" VerticalAlignment="Top" Height="52" Width="264" FontFamily="Roboto Lt" FontSize="48" Foreground="White" TextAlignment="Center" Opacity="1.5" FontWeight="Bold" Margin="-9,2,0,0"/>
+            <TextBlock x:Name="textBlockLocation" Height="NaN" Margin="-9,48,633,0" Width="NaN" FontSize="24" FontFamily="Roboto Lt" TextAlignment="Center" Foreground="White" />
+        </Grid>
+
+        <Grid Height="Auto" Margin="0,160,0,420" Width="980" HorizontalAlignment="Center">
+
+            <Grid.Background>
+                <ImageBrush ImageSource="/Resources/abcd.jpg" TileMode="Tile"/>
+            </Grid.Background>
+            <TextBlock x:Name="textBlockcrypto" Height="NaN" Margin="0,0,279,53" Width="474" Foreground="White" FontFamily="Roboto Lt" FontSize="36" HorizontalAlignment="Center"  />
+
+        </Grid>
+
+
+
+
+
+
+
+
 
     </Grid>
 </Page>
